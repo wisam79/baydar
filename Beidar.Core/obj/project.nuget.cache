@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "6wa+fk8wXV4=",
+  "dgSpecHash": "wqX6iD71L9w=",
   "success": true,
   "projectFilePath": "C:\\Users\\Laptop Shop\\Downloads\\csharp\\Beidar.Core\\Beidar.Core.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Laptop Shop\\.nuget\\packages\\communitytoolkit.mvvm\\8.4.0\\communitytoolkit.mvvm.8.4.0.nupkg.sha512"
+  ],
   "logs": []
 }

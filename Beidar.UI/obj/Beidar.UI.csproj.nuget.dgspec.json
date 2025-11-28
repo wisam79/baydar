@@ -4,6 +4,152 @@
     "C:\\Users\\Laptop Shop\\Downloads\\csharp\\Beidar.UI\\Beidar.UI.csproj": {}
   },
   "projects": {
+    "C:\\Users\\Laptop Shop\\Downloads\\csharp\\Beidar.Core\\Beidar.Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Laptop Shop\\Downloads\\csharp\\Beidar.Core\\Beidar.Core.csproj",
+        "projectName": "Beidar.Core",
+        "projectPath": "C:\\Users\\Laptop Shop\\Downloads\\csharp\\Beidar.Core\\Beidar.Core.csproj",
+        "packagesPath": "C:\\Users\\Laptop Shop\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Laptop Shop\\Downloads\\csharp\\Beidar.Core\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Laptop Shop\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "dependencies": {
+            "CommunityToolkit.Mvvm": {
+              "target": "Package",
+              "version": "[8.4.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.307/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Laptop Shop\\Downloads\\csharp\\Beidar.Data\\Beidar.Data.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Laptop Shop\\Downloads\\csharp\\Beidar.Data\\Beidar.Data.csproj",
+        "projectName": "Beidar.Data",
+        "projectPath": "C:\\Users\\Laptop Shop\\Downloads\\csharp\\Beidar.Data\\Beidar.Data.csproj",
+        "packagesPath": "C:\\Users\\Laptop Shop\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Laptop Shop\\Downloads\\csharp\\Beidar.Data\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Laptop Shop\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {
+              "C:\\Users\\Laptop Shop\\Downloads\\csharp\\Beidar.Core\\Beidar.Core.csproj": {
+                "projectPath": "C:\\Users\\Laptop Shop\\Downloads\\csharp\\Beidar.Core\\Beidar.Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[9.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.307/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "C:\\Users\\Laptop Shop\\Downloads\\csharp\\Beidar.UI\\Beidar.UI.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -26,7 +172,14 @@
         "frameworks": {
           "net9.0-windows7.0": {
             "targetAlias": "net9.0-windows",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\Laptop Shop\\Downloads\\csharp\\Beidar.Core\\Beidar.Core.csproj": {
+                "projectPath": "C:\\Users\\Laptop Shop\\Downloads\\csharp\\Beidar.Core\\Beidar.Core.csproj"
+              },
+              "C:\\Users\\Laptop Shop\\Downloads\\csharp\\Beidar.Data\\Beidar.Data.csproj": {
+                "projectPath": "C:\\Users\\Laptop Shop\\Downloads\\csharp\\Beidar.Data\\Beidar.Data.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -44,6 +197,50 @@
       "frameworks": {
         "net9.0-windows7.0": {
           "targetAlias": "net9.0-windows",
+          "dependencies": {
+            "EPPlus": {
+              "target": "Package",
+              "version": "[8.3.1, )"
+            },
+            "MaterialDesignThemes": {
+              "target": "Package",
+              "version": "[5.3.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "Microsoft.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[10.0.0, )"
+            },
+            "ModernWpfUI": {
+              "target": "Package",
+              "version": "[0.9.6, )"
+            },
+            "QuestPDF": {
+              "target": "Package",
+              "version": "[2025.7.4, )"
+            },
+            "Serilog": {
+              "target": "Package",
+              "version": "[4.3.0, )"
+            },
+            "Serilog.Sinks.Console": {
+              "target": "Package",
+              "version": "[6.1.1, )"
+            },
+            "Serilog.Sinks.File": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "ZXing.Net": {
+              "target": "Package",
+              "version": "[0.16.11, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

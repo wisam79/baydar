@@ -1,0 +1,123 @@
+<UserControl x:Class="Beidar.UI.Views.Sales.SalesView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Beidar.UI.Views.Sales"
+             xmlns:ui="http://schemas.modernwpf.com/2019"
+             xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="1000">
+    <Grid Margin="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+
+        <!-- Left Side: Product Selection -->
+        <Grid Grid.Column="0" Margin="0,0,10,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <!-- Search Bar -->
+            <TextBox Grid.Row="0" 
+                     Text="{Binding SearchQuery, UpdateSourceTrigger=PropertyChanged}"
+                     ui:ControlHelper.PlaceholderText="{DynamicResource Sale_SearchPlaceholder}"
+                     Margin="0,0,0,10"
+                     Padding="10"/>
+
+            <!-- Products Grid -->
+            <ScrollViewer Grid.Row="1">
+                <ItemsControl ItemsSource="{Binding Products}">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapPanel />
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Button Command="{Binding DataContext.AddToCartCommand, RelativeSource={RelativeSource AncestorType=ItemsControl}}" 
+                                    CommandParameter="{Binding}"
+                                    Width="150" Height="150" Margin="5" Padding="0"
+                                    Style="{StaticResource AccentButtonStyle}">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                    </Grid.RowDefinitions>
+                                    <md:PackIcon Kind="Box" Grid.Row="0" Width="48" Height="48" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    <TextBlock Grid.Row="1" Text="{Binding Name}" TextWrapping="Wrap" TextAlignment="Center" FontWeight="Bold" Margin="5"/>
+                                    <TextBlock Grid.Row="2" Text="{Binding Price, StringFormat=C}" TextAlignment="Center" Margin="0,0,0,5"/>
+                                </Grid>
+                            </Button>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </ScrollViewer>
+        </Grid>
+
+        <!-- Right Side: Cart -->
+        <Grid Grid.Column="1" Background="{DynamicResource SystemControlBackgroundChromeMediumLowBrush}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Text="{DynamicResource Sale_CurrentSale}" Style="{StaticResource SubtitleTextBlockStyle}" Margin="10"/>
+
+            <!-- Cart Items -->
+            <DataGrid Grid.Row="1" 
+                      ItemsSource="{Binding CartItems}" 
+                      SelectedItem="{Binding SelectedCartItem}"
+                      AutoGenerateColumns="False" 
+                      IsReadOnly="True"
+                      HeadersVisibility="Column"
+                      GridLinesVisibility="None"
+                      Background="Transparent"
+                      Margin="5">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="{DynamicResource Sale_Col_Product}" Binding="{Binding ProductName}" Width="*"/>
+                    <DataGridTextColumn Header="{DynamicResource Sale_Col_Qty}" Binding="{Binding Quantity}" Width="50"/>
+                    <DataGridTextColumn Header="{DynamicResource Sale_Col_Total}" Binding="{Binding LineTotal, StringFormat=C}" Width="80"/>
+                </DataGrid.Columns>
+            </DataGrid>
+
+            <!-- Totals & Actions -->
+            <StackPanel Grid.Row="2" Margin="10">
+                <Button Content="{DynamicResource Sale_Remove}" Command="{Binding RemoveFromCartCommand}" Style="{StaticResource DefaultButtonStyle}" HorizontalAlignment="Right" Margin="0,0,0,10"/>
+
+                <Grid Margin="0,5">
+                    <TextBlock Text="{DynamicResource Sale_Subtotal}" HorizontalAlignment="Left"/>
+                    <TextBlock Text="{Binding Subtotal, StringFormat=C}" HorizontalAlignment="Right" FontWeight="Bold"/>
+                </Grid>
+                <Grid Margin="0,5">
+                    <TextBlock Text="{DynamicResource Sale_Discount}" HorizontalAlignment="Left"/>
+                    <TextBox Text="{Binding Discount, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Right" Width="80" TextAlignment="Right"/>
+                </Grid>
+                <Grid Margin="0,5">
+                    <TextBlock Text="{DynamicResource Sale_Total}" HorizontalAlignment="Left" FontSize="18" FontWeight="Bold"/>
+                    <TextBlock Text="{Binding Total, StringFormat=C}" HorizontalAlignment="Right" FontSize="18" FontWeight="Bold" Foreground="{DynamicResource SystemControlForegroundAccentBrush}"/>
+                </Grid>
+                
+                <Separator Margin="0,10"/>
+                
+                <Grid Margin="0,5">
+                    <TextBlock Text="{DynamicResource Sale_Paid}" HorizontalAlignment="Left"/>
+                    <TextBox Text="{Binding AmountPaid, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Right" Width="80" TextAlignment="Right"/>
+                </Grid>
+                <Grid Margin="0,5">
+                    <TextBlock Text="{DynamicResource Sale_Change}" HorizontalAlignment="Left"/>
+                    <TextBlock Text="{Binding Change, StringFormat=C}" HorizontalAlignment="Right" FontWeight="Bold"/>
+                </Grid>
+
+                <Button Content="{DynamicResource Sale_Checkout}" Command="{Binding CheckoutCommand}" Style="{StaticResource AccentButtonStyle}" Height="50" FontSize="18" Margin="0,20,0,0" HorizontalAlignment="Stretch"/>
+            </StackPanel>
+        </Grid>
+        
+         <ProgressBar Grid.ColumnSpan="2" IsIndeterminate="True" Visibility="{Binding IsBusy, Converter={StaticResource BooleanToVisibilityConverter}}" VerticalAlignment="Top"/>
+    </Grid>
+</UserControl>

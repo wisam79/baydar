@@ -1,0 +1,53 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+    
+    <!-- Navigation -->
+    <sys:String x:Key="Nav_Dashboard">لوحة التحكم</sys:String>
+    <sys:String x:Key="Nav_Sales">نقطة البيع</sys:String>
+    <sys:String x:Key="Nav_Products">المنتجات</sys:String>
+    <sys:String x:Key="Nav_Inventory">المخزون</sys:String>
+    <sys:String x:Key="Nav_Customers">العملاء</sys:String>
+    <sys:String x:Key="Nav_Reports">التقارير</sys:String>
+    <sys:String x:Key="Nav_Settings">الإعدادات</sys:String>
+
+    <!-- Dashboard -->
+    <sys:String x:Key="Dash_Title">لوحة التحكم</sys:String>
+    <sys:String x:Key="Dash_TotalSales">إجمالي المبيعات</sys:String>
+    <sys:String x:Key="Dash_Today">اليوم</sys:String>
+    <sys:String x:Key="Dash_Orders">الطلبات</sys:String>
+    <sys:String x:Key="Dash_LowStock">مخزون منخفض</sys:String>
+    <sys:String x:Key="Dash_Items">عناصر</sys:String>
+    <sys:String x:Key="Dash_NetProfit">صافي الربح</sys:String>
+    <sys:String x:Key="Dash_Estimated">تقديري</sys:String>
+
+    <!-- Products -->
+    <sys:String x:Key="Prod_Title">المنتجات</sys:String>
+    <sys:String x:Key="Prod_Add">إضافة منتج</sys:String>
+    <sys:String x:Key="Prod_Delete">حذف</sys:String>
+    <sys:String x:Key="Prod_Col_ID">ت.م</sys:String>
+    <sys:String x:Key="Prod_Col_Name">الاسم</sys:String>
+    <sys:String x:Key="Prod_Col_Category">الفئة</sys:String>
+    <sys:String x:Key="Prod_Col_Price">السعر</sys:String>
+    <sys:String x:Key="Prod_Col_Stock">المخزون</sys:String>
+    <sys:String x:Key="Prod_Col_Barcode">الباركود</sys:String>
+
+    <!-- Sales -->
+    <sys:String x:Key="Sale_Title">بيع جديد</sys:String>
+    <sys:String x:Key="Sale_SearchPlaceholder">بحث عن منتج (اسم، باركود)...</sys:String>
+    <sys:String x:Key="Sale_CurrentSale">الفاتورة الحالية</sys:String>
+    <sys:String x:Key="Sale_Col_Product">المنتج</sys:String>
+    <sys:String x:Key="Sale_Col_Qty">الكمية</sys:String>
+    <sys:String x:Key="Sale_Col_Total">المجموع</sys:String>
+    <sys:String x:Key="Sale_Remove">حذف المحدد</sys:String>
+    <sys:String x:Key="Sale_Subtotal">المجموع الفرعي:</sys:String>
+    <sys:String x:Key="Sale_Discount">الخصم:</sys:String>
+    <sys:String x:Key="Sale_Total">الإجمالي:</sys:String>
+    <sys:String x:Key="Sale_Paid">المدفوع:</sys:String>
+    <sys:String x:Key="Sale_Change">الباقي:</sys:String>
+    <sys:String x:Key="Sale_Checkout">إتمام البيع</sys:String>
+
+    <!-- General -->
+    <sys:String x:Key="App_Title">نظام بيدر</sys:String>
+    <sys:String x:Key="App_Welcome">مرحباً بك في نظام بيدر</sys:String>
+</ResourceDictionary>

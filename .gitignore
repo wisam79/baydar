@@ -1,0 +1,32 @@
+# C# Project specific
+*.csproj.user
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+[Bb]in/
+[Oo]bj/
+Log/
+Logs/
+log/
+logs/
+
+# Visual Studio 2015 cache/options directory
+.vs/
+
+# Rider files
+.idea/
+
+# User-specific files
+*.db
